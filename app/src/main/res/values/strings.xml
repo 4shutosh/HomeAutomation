@@ -8,6 +8,6 @@
     <string name="ledStrips">LED Strips</string>
 
 <!--    add your base ip here-->
-    <string name="baseIp">http://</string>
+    <string name="baseIp">http://103.229.25.</string>
     <string name="enter">Enter</string>
 </resources>
