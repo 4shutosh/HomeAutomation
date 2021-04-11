@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="TextInputLayoutFormLogin" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxStrokeColor">@color/grey500</item>
+        <item name="boxStrokeErrorColor">@color/red400</item>
+        <item name="android:layout_marginBottom">@dimen/fiveDp</item>
+        <item name="hintEnabled">false</item>
+        <!--        <item name="fontFamily">@font/poppins_regular</item>-->
+        <item name="hintTextColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey700</item>
+
+    </style>
+
+    <style name="MainButtonTheme" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="cardBackgroundColor">@color/grey300</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="android:shadowColor">?attr/cardBackgroundColor</item>
+        <item name="cardElevation">@dimen/fiveDp</item>
+        <item name="cardCornerRadius">30dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/fiveDp</item>
+        <item name="android:titleMarginBottom">@dimen/tenDp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="rippleColor">@color/grey700</item>
+    </style>
+
+    <style name="MainCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginVertical">30dp</item>
+    </style>
+
+    <dimen name="fiveDp">5dp</dimen>
+</resources>
