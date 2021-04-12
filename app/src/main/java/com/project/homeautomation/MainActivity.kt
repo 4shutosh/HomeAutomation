@@ -30,6 +30,26 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
 
+        mainBinding.enterButton.setOnClickListener {
+            val s = mainBinding.currentIpEt.text.toString()
+            if(s.isEmpty()){
+                mainBinding.currentIpEt.error = "Please Enter Valid IP"
+                return@setOnClickListener
+            }
+            try {
+                val imm: InputMethodManager =
+                    getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+            } catch (e: Exception) {
+                // TODO: handle exception
+            }
+            initButtons(s)
+            mainBinding.currentIpEt.text?.clear()
+            mainBinding.currentIpEt.clearFocus()
+            mainBinding.currentIpInputLayout.clearFocus()
+        }
+
+
         mainBinding.currentIpEt.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
@@ -40,19 +60,9 @@ class MainActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {
                 val count = s?.length
-                Log.d(TAG, "onTextChanged: " + count)
+                Log.d(TAG, "onTextChanged: $count")
                 if (count == 2) {
-                    try {
-                        val imm: InputMethodManager =
-                            getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                        imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-                    } catch (e: Exception) {
-                        // TODO: handle exception
-                    }
-                    initButtons(s.toString())
-                    mainBinding.currentIpEt.text?.clear()
-                    mainBinding.currentIpEt.clearFocus()
-                    mainBinding.currentIpInputLayout.clearFocus()
+
                 }
             }
 
